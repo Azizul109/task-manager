@@ -1,0 +1,66 @@
+.task-manager {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.task-header h1 {
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.task-header p {
+  color: #666;
+  font-size: 16px;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+.task-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.filter-select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .task-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .task-header {
+    flex-direction: column;
+    gap: 15px;
+    align-items: flex-start;
+  }
+}

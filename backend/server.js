@@ -16,8 +16,8 @@ testConnection();
 User.hasMany(Task, { foreignKey: 'UserId' });
 Task.belongsTo(User, { foreignKey: 'UserId' });
 
-// app.use('/api/auth', require('./routes/auth'));
-// app.use('/api/tasks', require('./routes/tasks'));
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/tasks', require('./routes/tasks'));
 
 const syncDatabase = async () => {
   try {

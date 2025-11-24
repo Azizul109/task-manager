@@ -26,17 +26,30 @@ const Task = sequelize.define('Task', {
     type: DataTypes.ENUM('low', 'medium', 'high'),
     defaultValue: 'medium'
   },
-  dueDate: {
+  due_date: {
     type: DataTypes.DATE,
     allowNull: true
   },
-  completedAt: {
+  completed_at: {
     type: DataTypes.DATE,
     allowNull: true
+  },
+  created_at: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
+  },
+  updated_at: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   }
 }, {
   tableName: 'tasks',
-  timestamps: true
+  timestamps: false,
+  hooks: {
+    beforeUpdate: (task) => {
+      task.updated_at = new Date();
+    }
+  }
 });
 
 module.exports = Task;

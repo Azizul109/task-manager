@@ -31,15 +31,24 @@ const User = sequelize.define('User', {
     validate: {
       len: [6, 100]
     }
+  },
+  created_at: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
+  },
+  updated_at: {
+    type: DataTypes.DATE,
+    defaultValue: DataTypes.NOW
   }
 }, {
   tableName: 'users',
-  timestamps: true,
+  timestamps: false,
   hooks: {
     beforeCreate: async (user) => {
       user.password = await bcrypt.hash(user.password, 12);
     },
     beforeUpdate: async (user) => {
+      user.updated_at = new Date();
       if (user.changed('password')) {
         user.password = await bcrypt.hash(user.password, 12);
       }

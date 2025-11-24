@@ -1,0 +1,183 @@
+.task-item {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #007bff;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.task-item.priority-high {
+  border-left-color: #dc3545;
+}
+
+.task-item.priority-medium {
+  border-left-color: #ffc107;
+}
+
+.task-item.priority-low {
+  border-left-color: #28a745;
+}
+
+.task-item.overdue {
+  border-left-color: #dc3545;
+  background-color: #fff5f5;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+
+.task-title {
+  color: #333;
+  margin: 0;
+  font-size: 18px;
+  flex: 1;
+}
+
+.task-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit {
+  background-color: #17a2b8;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-edit:hover {
+  background-color: #138496;
+}
+
+.btn-delete {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-delete:hover {
+  background-color: #c82333;
+}
+
+.task-description {
+  color: #666;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.task-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.status-badge {
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-in-progress {
+  background-color: #cce7ff;
+  color: #004085;
+}
+
+.status-completed {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.priority-badge {
+  padding: 4px 8px;
+  background-color: #e9ecef;
+  border-radius: 20px;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+
+.due-date {
+  font-size: 12px;
+  color: #666;
+}
+
+.due-date.overdue {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+.completed-date {
+  font-size: 12px;
+  color: #28a745;
+}
+
+.status-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-status {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background-color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s;
+}
+
+.btn-status:hover {
+  background-color: #f8f9fa;
+}
+
+.btn-status.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+@media (max-width: 768px) {
+  .task-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .task-actions {
+    align-self: flex-end;
+  }
+  
+  .task-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .status-actions {
+    justify-content: center;
+  }
+}
